@@ -6,10 +6,16 @@ import { registerMicroApps, start ,setDefaultMountApp} from 'qiankun';
 
 registerMicroApps([
   {
-    name: 'sub-vue', // app name registered
-    entry:'//localhost:7777/sub-vue',
+    name: 'sub-vue',
+    entry:process.env.VUE_APP_SUB_VUE,
     container: '#subapp-viewport',
     activeRule: '/sub-vue',
+  },
+  {
+    name: 'sale', 
+    entry:process.env.VUE_APP_SALE,
+    container: '#subapp-viewport',
+    activeRule: '/sale',
   },
 ]);
 start();

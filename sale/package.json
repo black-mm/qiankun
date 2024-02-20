@@ -1,5 +1,5 @@
 {
-  "name": "sub-vue",
+  "name": "sale",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,10 +19,5 @@
     "@vue/cli-plugin-vuex": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
     "vue-template-compiler": "^2.6.11"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }

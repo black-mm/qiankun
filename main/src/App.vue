@@ -1,12 +1,10 @@
 <template>
   <div>
-    <div>
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
-     main 基座
+    <div class="main">
+      <div>main 基座</div>
+      <span @click="goTo('/sub-vue')">vue app1</span>
+      <span @click="goTo('/sale')">sale</span>
     </div>
-    <div @click="goTo">vue app1</div>
-    <!-- <router-view/> -->
     <div id="subapp-viewport"></div>
   </div>
 </template>
@@ -14,41 +12,36 @@
 <script>
 export default {
   name: '',
-  data(){
-    return{
+  data() {
+    return {
 
     }
   },
-  methods:{
-    goTo(){
-      history.pushState(null, '/sub-vue', '/sub-vue')
+  methods: {
+    goTo(path) {
+      history.pushState(null, path, path)
     }
   }
 }
 </script>
-
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
+#subapp-viewport {
   padding: 30px;
   background-color: pink;
-
+}
+.main{
+  background-color: #205716e0;
+  padding: 20px 10px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+.main div:first-child{
+  text-align: center;
+}
+.main span{
+  text-decoration: underline;
+    text-underline-offset: 6px;
+    margin-right: 10px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

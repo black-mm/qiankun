@@ -1,6 +1,7 @@
 const { name } = require('../package.json')
+
 module.exports = {
-  publicPath: '/sub-vue',
+  publicPath: '/sale',
   transpileDependencies: ['common'],
   chainWebpack: config => config.resolve.symlinks(false),
   configureWebpack: {
@@ -12,7 +13,7 @@ module.exports = {
     }
   },
   devServer: {
-    port:process.env.VUE_APP_PORT,
+    port: process.env.VUE_APP_PORT,
     headers: {
       'Access-Control-Allow-Origin': '*'
     }
