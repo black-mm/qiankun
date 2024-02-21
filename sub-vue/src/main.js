@@ -30,10 +30,10 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('[vue] vue app bootstraped');
+  // console.log('[vue] vue app bootstraped');
 }
 export async function mount(props) {
-  console.log('[vue] props from main framework', props);
+  // console.log('[vue] props from main framework', props);
   render(props);
 }
 export async function unmount() {
