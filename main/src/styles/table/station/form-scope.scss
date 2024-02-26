@@ -1,0 +1,56 @@
+.station-form {
+  padding: 0 20px 20px 20px;
+  background: #fff;
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    input {
+      width: 86%;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td {
+      text-align: center;
+      font-weight: 400;
+      border: 1px solid #E5E5E5;
+      padding: 11px 0;
+    }
+
+    tr {
+      border: 1px solid #E5E5E5;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .left-tittle {
+      background: #EFF5FF;
+    }
+
+    .center-title {
+      font-weight: normal;
+      text-align: center;
+      padding: 11px;
+    }
+  }
+
+  .title-box {
+    overflow: hidden;
+    line-height: 60px;
+
+    .title-left {
+      float: left;
+    }
+
+    .title-right {
+      vertical-align: middle;
+      float: right;
+    }
+  }
+}

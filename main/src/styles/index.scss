@@ -1,0 +1,312 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+pre {
+  margin: 1rem 0;
+}
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  background-color: #f9fafb;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.under_line {
+  width: 100%;
+}
+
+.height-1 {
+  height: 1px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.bg-grey {
+  background: #DCDFE6;
+}
+
+
+.text+.text {
+  padding-left: 14px;
+}
+
+//  鼠标悬停变成箭头
+.pointer {
+  cursor: pointer;
+}
+
+// global
+$borderColor: #EDEDED;
+
+.border-bottom {
+  border-bottom: 1PX solid $borderColor;
+}
+
+//  隐藏input type=number时，去掉后面的上下按钮
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+
+// text
+.text-red {
+  color: #FF5A5A !important;
+}
+.text-blue {
+  color: #0072FF !important;
+}
+.text-green {
+  color: #23A939 !important;
+}
+.text-purple {
+  color: #5D76D1 !important;
+}
+.text-orange {
+  color: #FF9600 !important;
+}
+
+
+// flex
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.basis-xs {
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+}
+
+.basis-sm {
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+}
+
+.basis-df {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+
+.basis-lg {
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+}
+
+.basis-xl {
+  -ms-flex-preferred-size: 80%;
+  flex-basis: 80%;
+}
+
+.flex-sub {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flex-twice {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.flex-treble {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.flex-direction {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.mb-10{
+margin-bottom: 10px;
+}
+
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.align-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.align-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.align-stretch {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.self-start {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.self-center {
+  -ms-flex-item-align: flex-center;
+  align-self: flex-center;
+}
+
+.self-end {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.self-stretch {
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+}
+
+.align-stretch {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.justify-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.justify-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.justify-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
+}
+
+
+/* 定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(240, 240, 240, 1);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+  border-radius: 10px;
+  background-color: rgba(240, 240, 240, .5);
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+  background-color: rgba(170, 170, 170, 0.5);
+}

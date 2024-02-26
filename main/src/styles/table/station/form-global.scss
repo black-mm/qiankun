@@ -1,0 +1,19 @@
+.station-form .createD {
+  margin-top: 3% !important;
+}
+
+.station-form table {
+  .el-select .el-input__inner, .el-input--prefix .el-input__inner {
+    border: none;
+  }
+
+  .el-input__inner, .el-input__icon {
+    font-size: 12px;
+    height: auto;
+    line-height: normal;
+  }
+
+  .width-inline .el-input, .width-inline .el-range-editor.el-input__inner, .width-inline .el-select {
+    width: 100% !important;
+  }
+}

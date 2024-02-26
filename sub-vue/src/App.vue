@@ -4,10 +4,19 @@
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
       我是sub-vue 微应用
+     
     </div>
     <!-- <router-view/> -->
   </div>
 </template>
+<script>
+export default ({
+  name:'',
+  methods:{
+  }
+})
+</script>
+
 
 <style>
 #app {

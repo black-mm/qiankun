@@ -1,0 +1,73 @@
+.wraper{
+  border-radius: 6px;
+  background: #fff;
+  .content-body{
+    .el-tab-label{
+      font-size:16px;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(51,51,51,1);
+    }
+
+    .left{
+      padding: 20px 20px 0 20px;
+      border-top: 1px solid #E5E5E5;
+      //border-right: 1px solid #E5E5E5;
+      ul,li{
+        padding: 0;
+        margin: 0;
+      }
+      li{
+        line-height: 30px;
+      }
+
+      .title-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left-title{
+          font-size:16px;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+        }
+      }
+      .title-list,.custom-ipt{
+        margin-bottom: 20px;
+      }
+    }
+
+    .right{
+      //height: calc(100vh - 230px);
+      min-height: 600px;
+      font-size: 16px;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(51,51,51,1);
+      overflow-x: auto;
+      padding: 30px 20px 20px 20px;
+      border-top: 1px solid #E5E5E5;
+      border-left: 1px solid #E5E5E5;
+    }
+    //公司公章
+    .chapter{
+      padding: 20px 20px 0 20px;
+      margin: 0;
+      font-size: 16px;
+      min-height: 50vh;
+      font-family:PingFang SC;
+      font-weight:500;
+      color:rgba(51,51,51,1);
+      border-top: 1px solid #E5E5E5;
+      border-left: 1px solid #E5E5E5;
+      li{
+        display: flex;
+        line-height: 40px;
+        img {
+          width: 178px;
+          height: 178px;
+        }
+      }
+    }
+  }
+}

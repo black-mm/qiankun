@@ -1,0 +1,44 @@
+//表格斑马纹颜色
+::v-deep .el-table .row-odd {
+  background: #f4f9ff !important;
+}
+//第一列表格内容
+// ::v-deep .el-table--border .el-table__cell:first-child .cell {
+//   padding-left: 35px;
+// }
+//最后一列表头
+// ::v-deep .el-table th.el-table__cell:last-child > .cell {
+//   padding-left: 51px !important;
+// }
+//所有表头
+// ::v-deep .el-table th.el-table__cell > .cell {
+//   padding-left: 35px;
+// }
+//所有表格内容
+// ::v-deep .el-table .cell {
+//   padding-left: 35px;
+//   padding-right: 10px;
+// }
+//表格内容高度
+::v-deep .el-table .el-table__cell {
+  height: 53px;
+}
+
+// ::v-deep .el-table__fixed-body-wrapper {
+//   .cell {
+//     padding: 0 0 0 35px !important;
+//   }
+// }
+
+//隐藏日期选择器前后icon
+::v-deep .el-date-editor > .el-input__icon {
+  display: none;
+}
+//日期选择器range-separator设置为""后 设置中间间隔样式
+::v-deep .el-date-editor .el-range-separator {
+  display: inline-block;
+  height: 2px;
+  width: 29px;
+  // margin: 0 37px;
+  background: #999999;
+}

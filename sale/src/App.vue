@@ -2,11 +2,28 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <span @click="change">app1</span>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: '',
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    change() {
+      history.pushState(null, '/sub-vue', '/sub-vue')
+    }
+  }
+}
+</script>
 
 <style>
 #app {
