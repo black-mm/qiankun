@@ -44,9 +44,8 @@ export default {
   },
   created() {
     actions.onGlobalStateChange((state, prev) => {
-      console.log('基座监听当前值的值:  ' + state.name)
-      console.log('基座监听改变前的值:  ' + prev.name)
-    })
+      console.log('[基座]监听:  ' + state.name)
+    },true)
   },
   methods: {
     goTo(path) {
@@ -60,7 +59,7 @@ export default {
       return { 'active': this.active == item }
     },
     test() {
-      let obj = {name:'娃哈哈😎😎😎'}
+      let obj = {name:'基座哇哈哈😎😎😎'}
       actions.setGlobalState(obj);
     }
   }

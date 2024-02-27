@@ -33,7 +33,7 @@ export async function bootstrap() {
  
 }
 export async function mount(props) {
-  actions.setActions(props);
+  actions.setActions(props)
   render(props);
 }
 

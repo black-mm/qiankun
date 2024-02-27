@@ -18,13 +18,13 @@ export default ({
   },
   mounted() {
     actions.onGlobalStateChange((state) => {
-      console.log('微应用监听：'+state.name)
+      console.log('[sub-vue微应用]监听：'+state.name)
       this.state = state
     }, true)
   },
   methods: {
     change(){
-      let obj = {name:'😈😈劳资是微应用😈😈'}
+      let obj = {name:'sub-vue微应用😈😈😈😈'}
       actions.setGlobalState(obj)
     }
   }

@@ -4,22 +4,35 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <span @click="change">app1</span>
+      <div @click="changeData">sale修改数据</div>
+      <div>{{global}}</div>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
+import actions from './action'
 export default {
   name: '',
   data() {
     return {
-
+      global:''
     }
+  },
+  mounted(){
+    actions.onGlobalStateChange((state)=>{
+      console.log('[sale微应用]监听：'+state.name)
+      this.global = state
+    },true)
   },
   methods: {
     change() {
       history.pushState(null, '/sub-vue', '/sub-vue')
+    },
+    changeData(){
+      let obj = {name:'sale微应用😻😻😻😻'}
+      actions.setGlobalState(obj)
     }
   }
 }
