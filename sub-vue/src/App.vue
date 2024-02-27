@@ -1,18 +1,32 @@
 <template>
   <div id="app">
     <div id="nav">
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
       我是sub-vue 微应用
-     
+      <div @click="change">微应用更改state</div>
+      <div> {{state}}</div>
     </div>
-    <!-- <router-view/> -->
   </div>
 </template>
 <script>
+import actions from "./action"
 export default ({
-  name:'',
-  methods:{
+  name: '',
+  data(){
+    return {
+      state:''
+    }
+  },
+  mounted() {
+    actions.onGlobalStateChange((state) => {
+      console.log('微应用监听：'+state.name)
+      this.state = state
+    }, true)
+  },
+  methods: {
+    change(){
+      let obj = {name:'😈😈劳资是微应用😈😈'}
+      actions.setGlobalState(obj)
+    }
   }
 })
 </script>

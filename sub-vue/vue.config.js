@@ -9,7 +9,8 @@ module.exports = {
       library: `${name}-[name]`,
       libraryTarget: 'umd',
       jsonpFunction: `webpackJsonp_${name}`
-    }
+    },
+    devtool: 'source-map',
   },
   devServer: {
     port:process.env.VUE_APP_PORT,

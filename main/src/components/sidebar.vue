@@ -2,6 +2,7 @@
   <div class="sidebar" @click="setSidebar">
     <span>隐藏</span>
     <span>侧栏</span>
+    <span>{{$store.state.sidebar}}</span>
   </div>
 </template>
 

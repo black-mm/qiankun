@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { registerMicroApps, start ,setDefaultMountApp} from 'qiankun';
+import { registerMicroApps, start ,setDefaultMountApp,initGlobalState, MicroAppStateActions } from 'qiankun';
 import "@/styles/index.scss"
 
 registerMicroApps([
@@ -19,6 +19,8 @@ registerMicroApps([
     activeRule: '/sale',
   },
 ]);
+
+
 start();
 
 Vue.config.productionTip = false
