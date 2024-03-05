@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import routes from './router';
 import store from './store';
-import actions from './action';
 Vue.config.productionTip = false;
 
 let router = null;
@@ -33,8 +32,7 @@ export async function bootstrap() {
   // console.log('[vue] vue app bootstraped');
 }
 export async function mount(props) {
-  // console.log('[vue] props from main framework', props);
-  actions.setActions(props)
+  Vue.prototype.$global = props.store
   render(props);
 }
 export async function unmount() {

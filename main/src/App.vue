@@ -2,6 +2,9 @@
   <div class="app">
     <!-- 子应用渲染盒子 -->
     <div id="subapp-viewport"></div>
+    <div class="tag-view">
+      <span v-for="item,index in tagView" :key=index>{{item.title}}</span>
+    </div>
     <div class="main" :class="hideSideBar">
       <!-- 第一行 -->
       <div class="top-title">
@@ -9,8 +12,9 @@
       </div>
       <!-- 链接 -->
       <div class="catalog">
-        <div v-for="item,index in list" :key="index" @click="goTo(item)" :class="setClass(item)">{{item}}</div>
-        <div @click="test">基座更改state按钮</div>
+        <div v-for="item,index in list" :key="index" @click="goTo(item)" :class="setClass(item)">{{item.path}}</div>
+        <div @click="toAbout">sale中的About</div>
+        <div @click="toHome">sale中的Home</div>
       </div>
     </div>
     <!-- 侧边栏按钮 -->
@@ -22,7 +26,6 @@
 import sidebar from '@/components/sidebar.vue'
 import { mapState } from 'vuex'
 
-import actions from './action'
 export default {
   name: '',
   components: {
@@ -30,38 +33,58 @@ export default {
   },
   data() {
     return {
-      list: ['/sub-vue', '/sale'],
-      active: 'main'
+      list:[
+        {
+          path:'/sub-vue',
+          title:'sub-vue'
+        },
+        // {
+        //   path:'/sale',
+        //   title:'sale'
+        // }
+      ],
+      active: 'main',
     }
   },
+  watch:{
+    $route:{
+      handler(to){
+        if(!to.query.title) return 
+        let obj = {
+          title:to.query.title,
+          path:to.path
+        }
+        this.$store.commit('addTagView',obj)
+      }
+    }
+  },
+  created() {
+  },
   computed: {
-    ...mapState(['sidebar']),
+    ...mapState(['sidebar','tagView']),
     hideSideBar() {
       return {
         'hideSideBar': this.sidebar
       }
     },
   },
-  created() {
-    actions.onGlobalStateChange((state, prev) => {
-      console.log('[基座]监听:  ' + state.name)
-    },true)
-  },
   methods: {
-    goTo(path) {
-      this.active = path
-      history.pushState(null, path, path)
+    goTo(item) {
+      this.active = item.path
+      history.pushState(null, item.path, item.path+'?title='+item.title)
     },
-    toAbout() {
-      history.pushState(null, '/sale/about', '/sale/about')
+    toAbout(){
+      history.pushState(null, '/sale/about', '/sale/about?title=About关于')
+    },
+    toHome(){
+      history.pushState(null, '/sale/home', '/sale/home?title=Home首页')
     },
     setClass(item) {
-      return { 'active': this.active == item }
+      return { 'active': this.active == item.path }
     },
-    test() {
-      let obj = {name:'基座哇哈哈😎😎😎'}
-      actions.setGlobalState(obj);
-    }
+    createToken(){
+      localStorage.setItem('token',1)
+    },
   }
 }
 </script>
@@ -73,11 +96,12 @@ export default {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  margin-top: 50px;
 }
 .main {
   width: 300px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color:#e2e2f0;
   padding: 20px 10px;
   height: fit-content;
 }
@@ -106,5 +130,16 @@ export default {
 }
 .hideSideBar {
   display: none;
+}
+.tag-view{
+  width: calc(100% - 200px);
+  height: 50px;
+  background-color: #d9d9d9;
+  position: fixed;
+  top: 0px;
+  padding: 10px 10px 0 10px;
+  span{
+    margin-right: 10px;
+  }
 }
 </style>

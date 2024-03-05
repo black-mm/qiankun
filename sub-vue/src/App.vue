@@ -2,13 +2,12 @@
   <div id="app">
     <div id="nav">
       我是sub-vue 微应用
-      <div @click="change">微应用更改state</div>
+      <div >微应用更改state</div>
       <div> {{state}}</div>
     </div>
   </div>
 </template>
 <script>
-import actions from "./action"
 export default ({
   name: '',
   data(){
@@ -17,16 +16,9 @@ export default ({
     }
   },
   mounted() {
-    actions.onGlobalStateChange((state) => {
-      console.log('[sub-vue微应用]监听：'+state.name)
-      this.state = state
-    }, true)
+  
   },
   methods: {
-    change(){
-      let obj = {name:'sub-vue微应用😈😈😈😈'}
-      actions.setGlobalState(obj)
-    }
   }
 })
 </script>

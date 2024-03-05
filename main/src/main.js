@@ -17,9 +17,11 @@ registerMicroApps([
     entry:process.env.VUE_APP_SALE,
     container: '#subapp-viewport',
     activeRule: '/sale',
+    props:{
+      store
+    }
   },
 ]);
-
 
 start();
 

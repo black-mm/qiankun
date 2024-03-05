@@ -1,39 +1,45 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <span @click="change">app1</span>
-      <div @click="changeData">sale修改数据</div>
-      <div>{{global}}</div>
+      <div>
+        <span v-for="item,index in tagview" :key=index>{{item}}</span>
+      </div>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
-import actions from './action'
 export default {
   name: '',
   data() {
     return {
-      global:''
+      tagview:[],
     }
   },
   mounted(){
-    actions.onGlobalStateChange((state)=>{
-      console.log('[sale微应用]监听：'+state.name)
-      this.global = state
-    },true)
+    
+  },
+  watch:{
+    $route:{
+      handler(to){
+        if(to.query.title) return
+        let obj = {
+          title: to.meta.title,
+          path: to.path
+        }
+        this.$global.commit('addTagView',obj)
+      },
+    }
   },
   methods: {
     change() {
-      history.pushState(null, '/sub-vue', '/sub-vue')
+      history.pushState(null, '/sub-vue', '/sub-vue?title=sub-vue')
     },
-    changeData(){
-      let obj = {name:'sale微应用😻😻😻😻'}
-      actions.setGlobalState(obj)
-    }
+   
   }
 }
 </script>
